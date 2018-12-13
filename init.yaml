@@ -36,5 +36,5 @@ kubernetesVersion: v1.13.0
 networking:
   dnsDomain: cluster.local
   podSubnet: "10.244.0.0/16" #flannel
-  serviceSubnet: 10.96.0.0/12
+  serviceSubnet: 10.244.0.0/16
 scheduler: {}
