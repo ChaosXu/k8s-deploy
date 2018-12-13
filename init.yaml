@@ -24,7 +24,7 @@ apiServer:
   timeoutForControlPlane: 4m0s
 certificatesDir: /etc/kubernetes/pki
 clusterName: kubernetes
-controlPlaneEndpoint: ""
+controlPlaneEndpoint: "192.168.56.4:6443"
 controllerManager: {}
 dns:
   type: CoreDNS
