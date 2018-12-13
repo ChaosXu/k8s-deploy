@@ -35,6 +35,6 @@ imageRepository: k8s.gcr.io
 kubernetesVersion: v1.13.0
 networking:
   dnsDomain: cluster.local
-  podSubnet: ""
+  podSubnet: "10.244.0.0/16" #flannel
   serviceSubnet: 10.96.0.0/12
 scheduler: {}
