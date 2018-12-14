@@ -24,7 +24,7 @@ apiServer:
   timeoutForControlPlane: 4m0s
 certificatesDir: /etc/kubernetes/pki
 clusterName: kubernetes
-controlPlaneEndpoint: "192.168.56.4:6443"
+controlPlaneEndpoint: ""
 controllerManager: {}
 dns:
   type: CoreDNS
@@ -36,5 +36,5 @@ kubernetesVersion: v1.13.0
 networking:
   dnsDomain: cluster.local
   podSubnet: "10.244.0.0/16" #flannel
-  serviceSubnet: 10.244.0.0/16
+  #serviceSubnet: 10.244.0.0/16
 scheduler: {}
