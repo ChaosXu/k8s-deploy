@@ -11,4 +11,4 @@ spec:
       - sleep
       - "3600"
     imagePullPolicy: IfNotPresent
-  restartPolicy: Never
+  restartPolicy: Always
