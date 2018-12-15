@@ -1,25 +1,6 @@
 kubeadm init --config init.yaml
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
-## start kubelet
+kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
 
-``` sh
-swapoff -a
-systemctl start kubelet
-```
-
-Chain KUBE-EXTERNAL-SERVICES (1 references)
-target     prot opt source               destination         
-
-Chain KUBE-FIREWALL (2 references)
-target     prot opt source               destination         
-DROP       all  --  anywhere             anywhere             /* kubernetes firewall for dropping marked packets */ mark match 0x8000/0x8000
-
-Chain KUBE-FORWARD (1 references)
-target     prot opt source               destination         
-ACCEPT     all  --  anywhere             anywhere             /* kubernetes forwarding rules */ mark match 0x4000/0x4000
-ACCEPT     all  --  Kubernetes/16        anywhere             /* kubernetes forwarding conntrack pod source rule */ ctstate RELATED,ESTABLISHED
-ACCEPT     all  --  anywhere             Kubernetes/16        /* kubernetes forwarding conntrack pod destination rule */ ctstate RELATED,ESTABLISHED
-
-Chain KUBE-SERVICES (1 references)
-target     prot opt source               destination  
+kubeadm join 192.168.56.5:6443 --token abcdef.0123456789abcdef --discovery-token-ca-cert-hash sha256:d14fd2c08359ea697a9f23e5e8c742e0744f664e96395e194f20d5bdc394ee67
