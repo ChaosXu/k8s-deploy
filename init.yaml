@@ -32,7 +32,7 @@ etcd:
   local:
     dataDir: /var/lib/etcd
 imageRepository: k8s.gcr.io
-kubernetesVersion: v1.13.0
+kubernetesVersion: v1.13.1
 networking:
   dnsDomain: cluster.local
   podSubnet: "10.244.0.0/16" #flannel

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ~/.profile
+
 # setup centos7
 # Set SELinux in permissive mode (effectively disabling it)
 setenforce 0
